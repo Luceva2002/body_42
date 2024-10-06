@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luevange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 14:51:20 by luevange          #+#    #+#             */
-/*   Updated: 2024/10/06 15:44:26 by luevange         ###   ########.fr       */
+/*   Created: 2024/10/06 17:23:30 by luevange          #+#    #+#             */
+/*   Updated: 2024/10/06 17:35:36 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_str_is_alpha(char *str)
+int	check(char *str)
 {
-	while (*str != '\0')
+	char num;
+
+	num = 1;
+	while (*str != ' ')
 	{
-		if (!((*str >= 'A' && *str <= 'Z') || (*str >= 'a' && *str <= 'z')))
-		{
-			return (0);
-		}
 		str++;
 	}
-	return (1);
+	while (*str == '+'  || *str == '-')
+	{
+		if (*str == '-')
+		num = num * (-1) ;
+		str++;
+	}
+	if (num = -1)
+		return(1);
+	else 
+		return (0);
 }
-
-/*int main()
-{
-	printf("%d", ft_str_is_alpha("14231434141"));
-	
-}*/

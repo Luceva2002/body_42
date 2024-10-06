@@ -6,7 +6,7 @@
 /*   By: luevange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 15:27:12 by luevange          #+#    #+#             */
-/*   Updated: 2024/10/02 23:06:47 by luevange         ###   ########.fr       */
+/*   Updated: 2024/10/04 21:15:56 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_str_is_numeric(char *str)
 {
 	while (*str != '\0')
 	{
-		if (!(*str >= '1' && *str <= '9'))
+		if (!(*str >= '0' && *str <= '9'))
 		{
 			return (0);
 		}
@@ -27,6 +27,7 @@ int	ft_str_is_numeric(char *str)
 
 /*int main()
  {
-         printf("%d", ft_str_is_numeric("111adadsf11"));
+         printf("%d", ft_str_is_numeric("0"));
  
- }*/
+ }
+*/

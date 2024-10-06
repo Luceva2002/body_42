@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luevange <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ldei-sva <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 14:51:20 by luevange          #+#    #+#             */
-/*   Updated: 2024/10/06 15:44:26 by luevange         ###   ########.fr       */
+/*   Created: 2024/09/24 11:11:15 by ldei-sva          #+#    #+#             */
+/*   Updated: 2024/09/25 17:34:04 by ldei-sva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_str_is_alpha(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
-	while (*str != '\0')
+	int		i;
+
+	i = 0;
+	while (src[i] != '\0')
 	{
-		if (!((*str >= 'A' && *str <= 'Z') || (*str >= 'a' && *str <= 'z')))
-		{
-			return (0);
-		}
-		str++;
+		dest[i] = src[i];
+		i++;
 	}
-	return (1);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*int main()
 {
-	printf("%d", ft_str_is_alpha("14231434141"));
-	
-}*/
+	char	src[5] = "ciao";
+	char	dest[5];
+
+	ft_strcpy(dest, src);
+}*/	

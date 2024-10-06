@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luevange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 14:51:20 by luevange          #+#    #+#             */
-/*   Updated: 2024/10/06 15:44:26 by luevange         ###   ########.fr       */
+/*   Created: 2024/10/06 16:56:24 by luevange          #+#    #+#             */
+/*   Updated: 2024/10/06 17:48:02 by luevange         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+char **createdict(char *dict);
 
-int	ft_str_is_alpha(char *str)
+int	check(char *str);
+
+void	strcp_num(char *src, char *dest);
+
+int	main(int ac, char **av)
 {
-	while (*str != '\0')
+	if (ac == 2)
 	{
-		if (!((*str >= 'A' && *str <= 'Z') || (*str >= 'a' && *str <= 'z')))
-		{
-			return (0);
-		}
-		str++;
+		createdict("numbers.dict");
+		strcp_num();
+		check();
 	}
-	return (1);
-}
+	if (ac == 3)
+	{
+		createdict(av[2]);
+		strcp_num();
+		check();
+	}
+	return (0);	
 
-/*int main()
-{
-	printf("%d", ft_str_is_alpha("14231434141"));
-	
-}*/
+}

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   strcp_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luevange <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 14:51:20 by luevange          #+#    #+#             */
-/*   Updated: 2024/10/06 15:44:26 by luevange         ###   ########.fr       */
+/*   Created: 2024/10/06 12:54:41 by luevange          #+#    #+#             */
+/*   Updated: 2024/10/06 15:19:58 by ldei-sva         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_str_is_alpha(char *str)
+void	strcp_num(char *src, char *dest)
 {
-	while (*str != '\0')
+	int i;
+	
+	i = 0;
+	while (src[i] != ':')
 	{
-		if (!((*str >= 'A' && *str <= 'Z') || (*str >= 'a' && *str <= 'z')))
-		{
-			return (0);
-		}
-		str++;
+		if (src[i] >= '0' && src[i] <= '9')
+		dest[i] = src[i];
+		i++;
 	}
-	return (1);
+	dest[i] = '\0';
 }
 
-/*int main()
-{
-	printf("%d", ft_str_is_alpha("14231434141"));
-	
-}*/
