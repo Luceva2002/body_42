@@ -14,14 +14,14 @@ void	ft_rev_params(char *str)
 
 int	main(int ac, char **av)
 {
-	int	i;
+	int i;
 
-	i = 1;
-	while (i < ac)
+	i = ac - 1;
+	while (i != 0)
 	{
-		ft_print_params(av[i]);
+		ft_rev_params(av[i]);
 		write(1, "\n", 1);
-		i++;
+		i--;
 	}
 	return (0);
 }
